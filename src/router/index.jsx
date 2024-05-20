@@ -3,7 +3,7 @@ import CategoryMeals from "../pages/CategoyMeals/CategoryMeals";
 import HomePage from "../pages/HomePage";
 import MealDetails from "../pages/MealDetails";
 import Header from "../component/header";
-import Category from "../component/Category";
+
 const Router=()=>{
     return(
         <BrowserRouter>
@@ -13,7 +13,7 @@ const Router=()=>{
                 <Route path="/category/:cotegory" element={<CategoryMeals/>}/>
                 <Route path="/meal/:id" element={<MealDetails/>}/>
             </Routes>
-        <Category/>
+        
         </BrowserRouter>
     )
 }

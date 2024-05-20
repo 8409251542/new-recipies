@@ -1,7 +1,9 @@
+import Category from "../../component/Category";
+
 const HomePage=()=>{
     return(
         <>
-            <h1>HomePage</h1>
+            <Category/>
         </>
     )
 }

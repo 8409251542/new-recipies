@@ -1,11 +1,12 @@
 import axios from "axios";
 const api = axios.create({
-    baseURL:"www.themealdb.com/api/json/v1/1"
+    baseURL:"https://www.themealdb.com/api/json/v1/1"
 });
 
 const GetAllCategories=async ()=>{
     try {
         const {data}=await api.get("/categories.php");
+        console.log(data);
         return data;
     } catch (e) {
         console.log(e);
