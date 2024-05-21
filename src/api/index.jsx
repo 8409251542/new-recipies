@@ -17,7 +17,7 @@ const GetAllCategories=async ()=>{
 const Search=async (searchKey)=>{
     try {
         const {data}=await api.get(`/search.php?s=${searchKey}`);
-        return data?.meals ?? [];
+        return data;
     } catch (e) {
         console.log(e);
         throw new Error(e.massage);
