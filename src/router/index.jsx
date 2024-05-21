@@ -10,7 +10,7 @@ const Router=()=>{
         <Header/>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
-                <Route path="/category/:cotegory" element={<CategoryMeals/>}/>
+                <Route path="/meal/category/:category" element={<CategoryMeals/>}/>
                 <Route path="/meal/:id" element={<MealDetails/>}/>
             </Routes>
         

@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import { GetAllCategories } from "../api";
+import { useNavigate } from "react-router-dom";
 
 function Category() {
     const [categories, setCategories] = useState([]);
+    const navigate=useNavigate();
 
     useEffect(() => {
         GetAllCategories().then(response => setCategories(response.categories)).catch(console.log); // Assuming response has a "categories" field
     }, []); // Added dependency array
 
-    console.log(categories);
+   // console.log(categories);
+    const onCategroyClick=(category)=>{
+        navigate(`/meal/category/${category}`)
+    };
 
     return (
         <>
@@ -17,7 +22,7 @@ function Category() {
             </h1>
             <div className="flex justify-center items-center gap-12 ml-34 w-[100%] flex-wrap">
                 {categories.map(({ strCategory, idCategory, strCategoryThumb }) => ( // Assuming API response contains "strCategoryThumb"
-                    <div key={idCategory} className="pb-24 bg-white py-4 px-4 border-4 border-orange-600 rounded-3xl h-[150px] w-[150px] shadow-2xl cursor-pointer">
+                    <div key={idCategory} className="pb-24 bg-white py-4 px-4 border-4 border-orange-600 rounded-3xl h-[150px] w-[150px] shadow-2xl cursor-pointer" onClick={()=>onCategroyClick(strCategory)}>
                         <img src={strCategoryThumb} // Using category thumbnail from API
                              alt={strCategory}
                              className="w-54 h-54" />
