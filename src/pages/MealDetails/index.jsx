@@ -89,23 +89,16 @@ const MealDetails = () => {
     ].filter(({ ingredient }) => ingredient); // Remove empty ingredients
 
     return (
-        <div className="w-2/3 min-h-screen bg-slate-50 px-4 py-5 space-y-3">
+        <div className="w-full flex justify-evenly gap-8 min-h-screen bg-slate-50 px-4 p-8 space-y-3">
+            <div className="w-[50%]">
+            <h1 className="text-2xl md:text-3xl pl-2 my-2 border-l-4 ml-8 font-sans font-bold border-orange-600 dark:text-gray-200">
+                {strMeal}
+            </h1>
             <img src={strMealThumb} alt={strMeal} className="w-full h-auto" />
-            <div className="space-y-2">
-                <h1 className="text-lg">{strMeal}</h1>
-                <div className="flex flex-col space-y-1">
-                    <span>Health Score: 95</span>
-                    <span>Aggregate Likes: 95</span>
-                    <span>Weight Watcher Smart Points: 7</span>
-                    <span>Price Per Serving: 160.46</span>
-                </div>
-                <div>
-                    <span className="bg-green-300 rounded-md p-1">Vegetarian</span>
-                    <span className="bg-green-300 rounded-md p-1">Dairy Free</span>
-                    <span className="bg-green-300 rounded-md p-1">Very Healthy</span>
-                    <span className="bg-green-300 rounded-md p-1">Very Popular</span>
-                </div>
             </div>
+            
+            <div className="w-[50%]">
+            <h1 className="text-3xl">Instructions</h1>
             <div>
                 <p>{strInstructions}</p>
             </div>
@@ -116,6 +109,7 @@ const MealDetails = () => {
                         <li key={index}>{`${measure} ${ingredient}`}</li>
                     ))}
                 </ul>
+            </div>
             </div>
         </div>
     );
